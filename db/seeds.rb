@@ -6,6 +6,17 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+Airport.destroy_all
+
 Airport.create({name: "Los Angeles International Airport", code: "LAX", zip_code: "90045", city: "Los Angeles", address: "1 World Way"})
 
 Airport.create({name: "Portland International Airport", code: "PDX", zip_code: "97218", city: "Portland", address: "7000 NE Airport Way"})
+
+User.create({email: "veit@test.com", password_digest: "password", user_name: "Veit Anders", is_business: false})
+
+User.create({email: "greg@test.com", password_digest: "password", user_name: "Greg West", is_business: false})
+
+User.create({email: "atlanticaviationlax@test.com", password_digest: "password", user_name: "Atlantic Aviation LAX", is_business: true, airport_id: 1, address: "6411 W Imperial Hwy, Los Angeles, CA 90045", hours_of_operation: "24 hours", phone_number: "(310) 258-9884", contact_radio: "unknown", service_fuel: true, has_car: true, service_facilities: true, winter_services: true, other_services: true, rating: 0})
+
+User.create({email: "atlanticaviationpdx@test.com", password_digest: "password", user_name: "Atlantic Aviation PDX", is_business: true, airport_id: 2, address: "8089 NE Airport Way, Portland, OR 97218", hours_of_operation: "24 hours", phone_number: "(503) 331-4220", contact_radio: "unknown", service_fuel: true, has_car: true, service_facilities: true, winter_services: true, other_services: true, rating: 0})
+
