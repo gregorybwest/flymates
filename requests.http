@@ -1,3 +1,7 @@
+### Users Index
+GET http://localhost:3000/users
+
+
 ### Users Create (signup)
 POST http://localhost:3000/users.json
 Content-Type: application/json
@@ -6,5 +10,31 @@ Content-Type: application/json
   "email": "test@test.com",
   "user_name": "test user",
   "password": "password",
-  "password_confirmation": "password"
+  "password_confirmation": "password",
+  "is_business": false
+}
+
+### Users Show
+
+GET http://localhost:3000/users/13
+
+### Users Update
+
+PATCH http://localhost:3000/users/13
+Content-Type: application/json
+
+{
+  "user_name": "test user"
+}
+
+### Users Delete
+DELETE http://localhost:3000/users/12
+
+### Sessions create (login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "password"
 }
