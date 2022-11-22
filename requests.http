@@ -1,9 +1,11 @@
+@domain = http://localhost:3000
+
 ### Users Index
-GET http://localhost:3000/users
+GET {{ domain }}/users
 
 
 ### Users Create (signup)
-POST http://localhost:3000/users.json
+POST {{ domain }}/users.json
 Content-Type: application/json
 
 {
@@ -15,26 +17,54 @@ Content-Type: application/json
 }
 
 ### Users Show
-
-GET http://localhost:3000/users/13
+GET {{ domain }}/users/13
 
 ### Users Update
-
-PATCH http://localhost:3000/users/13
+PATCH {{ domain }}/users/13
 Content-Type: application/json
 
 {
-  "user_name": "test user"
+  "is_business": false
 }
 
 ### Users Delete
-DELETE http://localhost:3000/users/12
+DELETE {{ domain }}/users/12
 
 ### Sessions create (login)
-POST http://localhost:3000/sessions.json
+POST {{ domain }}/sessions.json
 Content-Type: application/json
 
 {
   "email": "test@test.com",
   "password": "password"
 }
+
+### Airports Index
+GET {{ domain }}/airports
+
+### Airports Create
+POST {{ domain }}/airports
+Content-Type: application/json
+
+{
+  "name": "Test Airport",
+  "code": "TST",
+  "zip_code": "12345",
+  "city": "Happy Land",
+  "address": "123 Happy Street"
+}
+
+### Airports Show
+GET {{ domain }}/airports/1
+
+### Airports Update
+PATCH {{ domain }}/airports/3
+Content-Type: application/json
+
+{
+  "zip_code": "94128"
+}
+
+### Airports Delete
+
+DELETE {{ domain }}/airports/5
