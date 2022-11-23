@@ -10,6 +10,8 @@ Airport.create({name: "Los Angeles International Airport", code: "LAX", zip_code
 
 Airport.create({name: "Portland International Airport", code: "PDX", zip_code: "97218", city: "Portland", address: "7000 NE Airport Way"})
 
+Airport.create({name: "San Francisco International Airport", code: "SFO", zip_code: "94128", city: "San Francisco", address: "San Francisco, CA 94128"})
+
 User.create({email: "veit@test.com", password_digest: "password", user_name: "Veit Anders", is_business: false})
 
 User.create({email: "greg@test.com", password_digest: "password", user_name: "Greg West", is_business: false})
