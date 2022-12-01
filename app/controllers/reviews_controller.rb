@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :get_user
-  
+  before_action :authenticate_user, except: [:index, :show]
+
   def index
     reviews = @user.received_reviews
     render json: reviews
