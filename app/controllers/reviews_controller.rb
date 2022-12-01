@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :get_user
-
+  
   def index
     reviews = @user.received_reviews
     render json: reviews
@@ -23,6 +23,17 @@ class ReviewsController < ApplicationController
   def show
     review = @user.received_reviews.find(params[:id])
     render json: review
+  end
+
+  def update
+    review = @user.received_reviews.find(params[:id])
+    review.body = params[:body] || review.body
+    review.rating = params[:rating] || review.rating
+    if review.save
+      render json: review
+    else
+      render json: { errors: review.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   
