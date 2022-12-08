@@ -15,4 +15,13 @@ class User < ApplicationRecord
   def is_business?
     self.is_business == true
   end
+
+  def average_rating
+    total_ratings = []
+    self.received_reviews.each do |received_review|
+      total_ratings << received_review.rating
+    end
+    average_rating = total_ratings.sum.to_f / received_reviews.count.to_f
+    average_rating
+  end
 end
