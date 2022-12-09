@@ -49,3 +49,5 @@ group :development do
 end
 
 gem 'jwt'
+
+gem 'active_model_serializers'
